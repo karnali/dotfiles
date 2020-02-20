@@ -1,55 +1,46 @@
-# Install git client in macOS from terminal.
-  $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
-  $ brew install git  
-  $ git --version  
+## Modular bash profile in DotFiles
 
-# Signup and create a account on GitHub
-   https://github.com/  
-
- Create a repositorie in github dotfiles.  We want this to be  public.  
-
-
-# Add your github email and username to git using terminal
-  git config --global user.email "github_emailAddress"  
-  git config --global user.name "gihub_username"
-
-# Repositories 
-cd to your local git project folder.  
-$ git init  
-$ git add .  
-$ git commit -m ". means include all files inside dotfiles folder"  
-$ git status  
-
-$ Push an existing repository from the command line  
-$ git remote add origin git@github.com:karnali/dotfiles.git  
-$ git push -u origin master  
+These are custom config files to set up a system. This is my .bashrc.d/ folder.
+```
+$ tree -la .bashrc.d/
+.bashrc.d/
+├── .bashrc
+├── ansible.bashrc
+├── aws.bashrc
+├── brew.bashrc
+├── git.bashrc
+└── path.bashrc
+```
 
 
+bash_profile aliases for edit and sourcing
+```
+$ bp
+$ reload
+```
 
-## DotFiles  
 
-These are custom config files to set up a system.  
+# Installation  
 
 
-## Installation  
+Git doesn't work on MacOS Catalina: “xcrun: error: invalid active developer   
+path (/Library/Developer/CommandLineTools), missing” [duplicate]
 
-    git clone git://github.com/karnali/dotfiles ~/.dotfiles  
-    cd ~/.dotfiles  
-    rake install  
+```
+$ xcode-select --install
+```
+
+```
+$ git clone git://github.com/karnali/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles/install/macOS
+$ chmod +x setup.sh
+$ ./setup.sh
+```
 
 
 # iTerm2 instructions.
-. Open iTerm2  
-. Select iTerm2 > Preferences.  
-. Under the General tab, check the box labeled "Load preferences from a custom folder or URL:"  
-. Press "Browse" and point it to ~/dotfiles/iterm2/com.googlecode.iterm2.plist.  
-. Restart iTerm2  
-
-
-
-## Environment  
-
-These settings are for  macOS  
-
-shell used is bash.  
-IDE is Atom.  
+1. Open iTerm2  
+2. Select iTerm2 > Preferences.  
+3. Under the General tab, check the box labeled "Load preferences from a custom folder or URL:"  
+4. Press "Browse" and point it to ~/dotfiles/iterm2/com.googlecode.iterm2.plist.  
+5. Restart iTerm2  

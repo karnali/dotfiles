@@ -1,3 +1,9 @@
+# backup current bash_profile
+# ---------------------------------------------------------
+cd ~/
+mv ~/.bash_profile ~/.bash_profile-orig
+
+
 # Brew
 # ---------------------------------------------------------
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -6,17 +12,10 @@ brew update
 brew tree
 brew install shellcheck
 brew install git
-brew nstall python
-
-
-# backup current bash_profile
-# ---------------------------------------------------------
-cd ~/
-mv ~/.bash_profile ~/.bash_profile-orig
-
+brew install python
 
 
 
 # Create symlinks 
 # ---------------------------------------------------------
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -sfn ~/dotfiles/.bash_profile ~/.bash_profile
