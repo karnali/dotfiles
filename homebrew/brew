@@ -1,0 +1,7 @@
+# shell tools
+cask "iterm2"
+brew "tree"
+
+# languages
+brew "pyenv"
+brew "pyenv-virtualenv"
